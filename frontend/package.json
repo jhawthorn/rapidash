@@ -1,0 +1,15 @@
+{
+  "name": "rapidash",
+  "version": "0.0.0",
+  "description": "Lightweight dashboard",
+  "private": true,
+  "dependencies": {
+    "handlebars": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Hawthorn <john.hawthorn@gmail.com>",
+  "license": "MIT"
+}
