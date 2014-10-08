@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "zepto": "~1.1.4"
+    "zepto": "~1.1.4",
+    "handlebars": "~2.0.0"
   }
 }
