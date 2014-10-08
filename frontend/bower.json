@@ -1,0 +1,17 @@
+{
+  "name": "rapidash",
+  "version": "0.0.0",
+  "authors": [
+    "John Hawthorn <john.hawthorn@gmail.com>"
+  ],
+  "description": "Lightweight dashboard",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
