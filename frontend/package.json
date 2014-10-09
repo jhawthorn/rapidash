@@ -4,6 +4,7 @@
   "description": "Lightweight dashboard",
   "private": true,
   "dependencies": {
+    "coffee-script": "^1.8.0",
     "handlebars": "^2.0.0"
   },
   "devDependencies": {},
