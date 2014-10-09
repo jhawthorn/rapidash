@@ -1,15 +1,16 @@
 
 MUSTACHEFILES=$(shell find widgets -type f -name '*.mustache')
-MUSTACHETARGETS=$(MUSTACHEFILES:%.mustache=%.js)
 
 HANDLEBARS=./node_modules/.bin/handlebars
 
 all: node_modules bower_components build
 
-build: $(MUSTACHETARGETS)
+build: build/templates.js
 
-%.js: %.mustache
-	$(HANDLEBARS) $< -o -f $@
+build/templates.js: $(MUSTACHEFILES)
+	mkdir -p build
+	$(HANDLEBARS) $(MUSTACHEFILES) -o -m -f $@
+
 
 node_modules: package.json
 	npm install
@@ -23,7 +24,7 @@ veryclean: clean
 	rm -Rf node_modules bower_components
 
 clean:
-	rm $(MUSTACHETARGETS)
+	rm -Rf build
 
 .PHONY: all build
 
