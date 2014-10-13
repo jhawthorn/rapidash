@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "zepto": "~1.1.4",
-    "handlebars": "~2.0.0"
+    "handlebars": "~2.0.0",
+    "rickshaw": "~1.5.0"
   }
 }

@@ -1,0 +1,28 @@
+
+$grid-width: 1240px;
+$grid-columns: 5;
+$grid-height: 740px;
+$grid-rows: 3;
+
+ul.grid {
+  list-style: none;
+  position: relative;
+  margin: 0 auto;
+  width: $grid-width;
+  height: $grid-height;
+  li {
+    position: absolute;
+    display: block;
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  [data-col="#{$i}"] { left: (($i)-1) * $grid-width/$grid-columns; }
+  [data-sizex="#{$i}"] { width: $i * $grid-width/$grid-columns; }
+}
+
+@for $i from 1 through $grid-rows {
+  [data-row="#{$i}"] { top: (($i)-1) * $grid-height/$grid-rows; }
+  [data-sizey="#{$i}"] { height: $i  * $grid-height/$grid-rows; }
+}
+
