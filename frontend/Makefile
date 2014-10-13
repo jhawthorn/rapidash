@@ -1,7 +1,7 @@
 
-MUSTACHEFILES=$(shell find widgets -type f -name '*.mustache')
-COFFEEFILES=$(shell find widgets -type f -name '*.coffee')
-SCSSFILES=$(shell find widgets -type f -name '*.scss')
+MUSTACHEFILES=$(shell find src -type f -name '*.mustache')
+COFFEEFILES=$(shell find src -type f -name '*.coffee')
+SCSSFILES=$(shell find src -type f -name '*.scss')
 
 HANDLEBARS=./node_modules/.bin/handlebars
 COFFEE=./node_modules/.bin/coffee
