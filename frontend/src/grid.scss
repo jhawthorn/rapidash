@@ -10,7 +10,7 @@ ul.grid {
   margin: 0 auto;
   width: $grid-width;
   height: $grid-height;
-  li {
+  > li {
     position: absolute;
     display: block;
   }

@@ -17,11 +17,23 @@
   <body>
     <ul class="grid">
       <li data-col=1 data-row=1 data-sizex=4 data-sizey=3>
-        <widget type="Graph" source="sample"></widget>
+        <widget type="Graph" source="graph"></widget>
       </li>
       <li data-col=5 data-row=1 data-sizex=1 data-sizey=3>
-        <widget type="List" source="sample"></widget>
+        <widget type="List" source="list"></widget>
       </li>
     </ul>
+    <script>
+Rapidash.getSource('graph').data = [
+  { x: 0, y: 40 },
+  { x: 1, y: 49 },
+  { x: 2, y: 38 },
+  { x: 3, y: 30 },
+  { x: 4, y: 32 }
+]
+
+Rapidash.getSource('list').data = ['foo', 'bar', 'baz']
+
+    </script>
   </body>
 </html>
