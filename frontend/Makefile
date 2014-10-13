@@ -1,14 +1,15 @@
 
 MUSTACHEFILES=$(shell find widgets -type f -name '*.mustache')
-
 COFFEEFILES=$(shell find widgets -type f -name '*.coffee')
+SCSSFILES=$(shell find widgets -type f -name '*.scss')
 
 HANDLEBARS=./node_modules/.bin/handlebars
 COFFEE=./node_modules/.bin/coffee
+SCSS=scss
 
 all: node_modules bower_components build
 
-build: build/app.js build/templates.js
+build: build/app.js build/app.css build/templates.js
 
 build/templates.js: $(MUSTACHEFILES)
 	@mkdir -p build
@@ -16,7 +17,11 @@ build/templates.js: $(MUSTACHEFILES)
 
 build/app.js: $(COFFEEFILES)
 	@mkdir -p build
-	./node_modules/.bin/coffee --no-header -c -p $(COFFEEFILES) > $@
+	$(COFFEE) --no-header -c -p $(COFFEEFILES) > $@
+
+build/app.css: $(SCSSFILES)
+	@mkdir -p build
+	cat $(SCSSFILES) | $(SCSS) -s > $@
 
 node_modules: package.json
 	npm install
