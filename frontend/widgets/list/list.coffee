@@ -11,5 +11,6 @@ class Rapidash.Widgets.List extends Rapidash.Widget
       JSON.stringify(item)
 
   data: ->
-    @renderItem(item) for item in @source.data
+    title: @get 'title'
+    list: (@renderItem(item) for item in @source.data)
 

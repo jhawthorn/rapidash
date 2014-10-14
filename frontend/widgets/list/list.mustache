@@ -1,5 +1,8 @@
+{{#if title}}
+<h1 class="list-title">{{title}}</h1>
+{{/if}}
 <ul>
-{{#each .}}
+{{#each list}}
 <li>{{.}}</li>
 {{/each}}
 </ul>
