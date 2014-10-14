@@ -1,11 +1,15 @@
 
 class Rapidash.Widgets.Graph extends Rapidash.Widget
   render: ->
-    graph = new Rickshaw.Graph
-      element: @node
-      renderer: @get('renderer') or 'line',
-      series: @series()
+    graph = new Rickshaw.Graph(@graphOptions())
     graph.render()
+
+  graphOptions: ->
+    options = JSON.parse(@get('options'))
+    options.element = @node
+    options.renderer = @get('renderer') or 'line'
+    options.series = @series()
+    options
 
   series: ->
     data = @source.data
