@@ -9,15 +9,15 @@ class Rapidash.Widgets.Graph extends Rapidash.Widget
 
   series: ->
     data = @source.data
+    palette = new Rickshaw.Color.Palette(scheme: 'colorwheel')
     if Array.isArray(data)
       [
-        color: 'steelblue',
+        color: palette.color()
         data: @source.data
       ]
     else
-      console.log(data)
       for name, series of data
-        color: 'steelblue',
-        name: name,
+        color: palette.color()
+        name: name
         data: series
 
