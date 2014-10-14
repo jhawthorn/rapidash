@@ -24,13 +24,21 @@
       </li>
     </ul>
     <script>
-Rapidash.getSource('graph').data = [
-  { x: 0, y: 40 },
-  { x: 1, y: 49 },
-  { x: 2, y: 38 },
-  { x: 3, y: 30 },
-  { x: 4, y: 32 }
-]
+      Rapidash.getSource('graph').data = {
+        foo: [
+          { x: 0, y: 40 },
+          { x: 1, y: 49 },
+          { x: 2, y: 38 },
+          { x: 3, y: 30 },
+          { x: 4, y: 32 }
+        ], bar: [
+          { x: 0, y: 140 },
+          { x: 1, y: 149 },
+          { x: 2, y: 38 },
+          { x: 3, y: 30 },
+          { x: 4, y: 132 }
+        ]
+      }
 
 Rapidash.getSource('list').data = ['foo', 'bar', 'baz']
 

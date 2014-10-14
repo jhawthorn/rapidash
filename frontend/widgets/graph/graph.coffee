@@ -3,9 +3,21 @@ class Rapidash.Widgets.Graph extends Rapidash.Widget
   render: ->
     graph = new Rickshaw.Graph
       element: @node
-      series: [
+      renderer: @get('renderer') or 'line',
+      series: @series()
+    graph.render()
+
+  series: ->
+    data = @source.data
+    if Array.isArray(data)
+      [
         color: 'steelblue',
         data: @source.data
       ]
-    graph.render()
+    else
+      console.log(data)
+      for name, series of data
+        color: 'steelblue',
+        name: name,
+        data: series
 
